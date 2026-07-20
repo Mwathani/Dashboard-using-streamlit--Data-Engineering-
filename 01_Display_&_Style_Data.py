@@ -3,16 +3,15 @@ import streamlit as st
 # Imports the pandas library
 import pandas as pd
 
-student_info = pd.DataFrame({
+st.write(pd.DataFrame({
     'FullName': [
         'John Doe', 
         'Rooney Mwathani',
         'John Rooney'
         ],
     'Admission No': [
-        'ICTM/00056/023', 
+        'ICTM/00056/021', 
         'BE/00016/019',
-        'CIT/00041/024']
-})
+        'CIT/00041/025']
+}))
 
-student_info

@@ -2,6 +2,7 @@
 import streamlit as st
 import pandas as pd
 from pathlib import Path
+import plotly.express as px
 
 # 01. Cached function to load data
 @st.cache_data
@@ -22,10 +23,18 @@ chart_data = load_data()
 
 
 # 03. Use the data in app. 
-st.write("Here is your data:")
+st.write("Product Sales Regional Data:")
 st.dataframe(chart_data)
 
 # Example: Plotting the data
 chart_data['OrderDate'] = pd.to_datetime(chart_data['OrderDate'])
 
-st.line_chart(chart_data, x="OrderDate", y="TotalPrice", color="Region")
+# 01. Line Charts
+# st.line_chart(chart_data, x="OrderDate", y="TotalPrice", color="Region")
+
+# 02. Bar and Column charts
+# st.bar_chart(chart_data, x="Region", y="TotalPrice")
+
+# 03. Scatter Plots
+fig = px.scatter(chart_data, x="UnitPrice", y="Quantity", color="Region", title="Unit Price vs Quantity")
+st.plotly_chart(fig)

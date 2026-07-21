@@ -52,4 +52,14 @@ chart_data['OrderDate'] = pd.to_datetime(chart_data['OrderDate'])
 
 
 # 05. Area Charts
-st.area_chart(chart_data, x="OrderDate", y="TotalPrice")
+# st.area_chart(chart_data, x="OrderDate", y="TotalPrice")
+
+
+# 06. Metrics & KPIs Indicators
+"""
+Real-life usecase: Used in Executive dashboards by managers 
+                -> To see the totals instantly at a glance
+"""
+
+total_sales = chart_data["TotalPrice"].sum()
+st.metric(label="TotalRevenue", value=f"${total_sales:,.2f}", delta="4.2%")

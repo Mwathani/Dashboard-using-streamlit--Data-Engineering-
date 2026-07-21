@@ -3,6 +3,7 @@ import streamlit as st
 import pandas as pd
 from pathlib import Path
 import plotly.express as px
+import altair as alt
 
 # 01. Cached function to load data
 @st.cache_data
@@ -36,5 +37,19 @@ chart_data['OrderDate'] = pd.to_datetime(chart_data['OrderDate'])
 # st.bar_chart(chart_data, x="Region", y="TotalPrice")
 
 # 03. Scatter Plots
-fig = px.scatter(chart_data, x="UnitPrice", y="Quantity", color="Region", title="Unit Price vs Quantity")
-st.plotly_chart(fig)
+# fig = px.scatter(chart_data, x="UnitPrice", y="Quantity", color="Region", title="Unit Price vs Quantity")
+# st.plotly_chart(fig)
+
+# 04. Altair Charts
+# chart = alt.Chart(chart_data).mark_circle(size=60).encode(
+#     x = "UnitPrice",
+#     y = "Quantity",
+#     color = "Region",
+#     tooltip = ["Product", "UnitPrice", "Quantity", "Region"]  
+# ).interactive()
+
+# st.altair_chart(chart, use_container_width=True)
+
+
+# 05. Area Charts
+st.area_chart(chart_data, x="OrderDate", y="TotalPrice")

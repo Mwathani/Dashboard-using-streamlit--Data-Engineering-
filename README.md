@@ -2,6 +2,12 @@
 
 A hands-on Streamlit project demonstrating how to display, style, and visualize data using Python. The project includes a pandas-based table example and an interactive sales dashboard built from an Excel dataset.
 
+## Live Demo
+
+[![Open the live dashboard](https://img.shields.io/badge/Streamlit-Open%20Live%20Dashboard-FF4B4B?logo=streamlit&logoColor=white)](https://sales-region-dashboard.streamlit.app/)
+
+**Live application:** [sales-region-dashboard.streamlit.app](https://sales-region-dashboard.streamlit.app/)
+
 ## Overview
 
 This repository explores common data engineering and data visualization workflows:
@@ -153,7 +159,6 @@ chart_data["OrderDate"] = pd.to_datetime(chart_data["OrderDate"])
 - Connect the dashboard to a database or cloud data source
 - Introduce automated tests
 - Add an example `.env` configuration
-- Deploy the dashboard to Streamlit Community Cloud
 - Add screenshots or a demo GIF
 - Add a license
 

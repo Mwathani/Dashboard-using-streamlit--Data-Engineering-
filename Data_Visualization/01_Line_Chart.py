@@ -31,14 +31,14 @@ st.dataframe(chart_data)
 chart_data['OrderDate'] = pd.to_datetime(chart_data['OrderDate'])
 
 # 01. Line Charts
-# st.line_chart(chart_data, x="OrderDate", y="TotalPrice", color="Region")
+st.line_chart(chart_data, x="OrderDate", y="TotalPrice", color="Region")
 
 # 02. Bar and Column charts
-# st.bar_chart(chart_data, x="Region", y="TotalPrice")
+st.bar_chart(chart_data, x="Region", y="TotalPrice")
 
 # 03. Scatter Plots
-# fig = px.scatter(chart_data, x="UnitPrice", y="Quantity", color="Region", title="Unit Price vs Quantity")
-# st.plotly_chart(fig)
+fig = px.scatter(chart_data, x="UnitPrice", y="Quantity", color="Region", title="Unit Price vs Quantity")
+st.plotly_chart(fig)
 
 # 04. Altair Charts
 # chart = alt.Chart(chart_data).mark_circle(size=60).encode(
@@ -52,7 +52,7 @@ chart_data['OrderDate'] = pd.to_datetime(chart_data['OrderDate'])
 
 
 # 05. Area Charts
-# st.area_chart(chart_data, x="OrderDate", y="TotalPrice")
+st.area_chart(chart_data, x="OrderDate", y="TotalPrice")
 
 
 # 06. Metrics & KPIs Indicators
@@ -61,8 +61,8 @@ chart_data['OrderDate'] = pd.to_datetime(chart_data['OrderDate'])
 #                 -> To see the totals instantly at a glance
 # """
 
-# total_sales = chart_data["TotalPrice"].sum()
-# st.metric(label="TotalRevenue", value=f"${total_sales:,.2f}", delta="4.2%")
+total_sales = chart_data["TotalPrice"].sum()
+st.metric(label="TotalRevenue", value=f"${total_sales:,.2f}", delta="4.2%")
 
 
 # 07. Data Tables & DataFrames
